@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World - ProStyle</title>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/153218/pro.greensock.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/153218/prostyle.min.js"></script>
+</head>
+<body data-prostyle="phone"></body>
+<script>
+ProStyle.Stories.phone = {
+  canvas: { padding:20, init:{bg: "#787"}},
+  frame: { aspectRatio:1 },
+  item: {
+    itemType:"layer",
+    init: {
+      size:[50,100],
+      bg:"#EEE",
+      corners:8
+    },
+    action: {
+      anim:40, rot:360
+    },
+    items:[
+      { itemType:"layer", init:{bg:"#AAA", size:10, corners:5, pos:[0,43]} },
+      { itemType:"layer", init:{bg:"#AAA", size:[15,2], corners:5, pos:[0,-45.5]} },
+      { itemType:"layer", init:{bg:"#000", size:[45,77], pos:[0,-3], corners:1,crop:true},
+          item:{
+            itemType:"image",
+            src:"http://lorempixel.com/400/200/nature/",
+            width:200,
+            height:120,
+            action:{ anim:40,rot:-360}
+          }
+      }
+    ]
+  }
+};
+</script>
+</html>
