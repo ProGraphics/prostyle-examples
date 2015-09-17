@@ -8,16 +8,37 @@
 <body data-prostyle="spinz"></body>
 <script>
 ProStyle.Stories.spinz = {
+  classes:{
+    anim:{ anim:[5,"less elastic"] },
+    long:{ size:[40,8], corners:5 },
+    circ:{ rot:-540, size:[18,32], corners:15 },
+    square: { rot:0, corners:false }
+  },
   canvas:{ init:{bg:"#ABC"}},
-	items:[
-		{
+  items:[
+    {
       itemType:"layer",
-      init:{ bg:"#EEE", pos:[0,-10], size:[40,8], corners:5 },
-      action:{ anim:[3,"in"], rot:3600, size:[30,30], corners:15 }
-		},
-		{
-		}
-	]
+      init:{ class:"long", bg:"#EEE" },
+      actions:[
+        { class:"anim, circ" },
+        { class:"anim, square" },
+        { class:"anim, long" }
+      ]
+    },
+    {
+      itemType:"layer",
+      init:{ rot:[90], pos:[0,40,-50], opacity:10, scale:[90,200]  },
+      item: {
+        itemType:"layer",
+        init:{ class:"long", bg:"#000", shadow:[0,0,2,"#000"] },
+        actions:[
+          { class:"anim, circ" },
+          { class:"anim, square" },
+          { class:"anim, long" }
+        ]
+      }
+    }
+  ]
 };
 </script>
 </html>
