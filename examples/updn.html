@@ -8,11 +8,15 @@
 <body data-prostyle="updn"></body>
 <script>
 ProStyle.Stories.updn = {
+  canvas: {
+    init: { bg: "#899" }
+  },
   item: {
     text:"up-dn",
     init: {
-      color:"#345",
-      font:40
+      color:"#FFF",
+      font:40,
+      textShadow:[0,0,2,"#000"]
     },
     action: {
       anim:[5,"less elastic inout",1,0,true],
