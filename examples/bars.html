@@ -36,7 +36,7 @@ ProStyle.Stories.bars = {
 					  delay:5, anim:1, fill:"orange",
 						data:[[5,5],[5,5],[3,4],[2,3],[1,2],[1,2],[1,2],[2,3],[3,4],[5,5],[5,5]]
 					},
-          { delay:6.5, anim:1, fill:"transparent" }
+          { delay:7.5, anim:1, fill:"transparent" }
 				]
 			},
       {
@@ -55,12 +55,20 @@ ProStyle.Stories.bars = {
               delay:2, anim:1, fill:"orange",
               data: [[5,5],[5,5],[5,5],[7,9],[5,5],[4,6],[5,5],[7,9],[5,5],[5,5],[5,5]]
             },
-            { delay:6.5, anim:1, fill:"transparent" }
+						{ 
+							delay:0.2, anim:0.3,
+              data: [[5,5],[5,5],[5,5],[8,8],[5,5],[4,6],[5,5],[7,9],[5,5],[5,5],[5,5]]
+            },
+						{ 
+							anim:0.3,
+              data: [[5,5],[5,5],[5,5],[7,9],[5,5],[4,6],[5,5],[7,9],[5,5],[5,5],[5,5]]
+            },
+            { delay:6.7, anim:1, fill:"transparent" }
           ]
         }
 		],
     actions:[
-		  { delay:13.5, anim:1, size:[45,65], rot:[-10,10,-15], bg:"#333", corners:24, border:[3,"orange"], scale:90},
+		  { delay:14.5, anim:1, size:[45,65], rot:[-10,10,-15], bg:"#333", corners:24, border:[3,"orange"], scale:90},
 		  { anim:[5,"extra elastic"], scale:false, rot:false},
 		  { anim:2, bg:"#EEE", size:[65,70], corners:1, pos:{z:-1},rot:{x:20}, border:false}
 		]
