@@ -8,6 +8,10 @@
 <body data-prostyle="phone"></body>
 <script>
 ProStyle.Stories.phone = {
+	classes: {
+		inset: { shadow:[0,0,2,"rgba(0,0,0,0.9)",0,true] },
+		screen: { size:[45,77], pos:[0,-3], corners:1, crop:true }
+	},
   canvas: { padding:20, init:{bg: "#787"}},
   frame: { aspectRatio:1 },
   item: {
@@ -15,15 +19,16 @@ ProStyle.Stories.phone = {
     init: {
       size:[50,100],
       bg:"#EEE",
-      corners:8
+      corners:8,
+			shadow:[0,0,5,"rgba(0,0,0,0.6)"]
     },
     action: {
       anim:40, rot:0
     },
     items:[
-      { itemType:"layer", init:{bg:"#AAA", size:10, corners:5, pos:[0,43]} },
-      { itemType:"layer", init:{bg:"#AAA", size:[15,2], corners:5, pos:[0,-45.5]} },
-      { itemType:"layer", init:{bg:"#000", size:[45,77], pos:[0,-3], corners:1,crop:true},
+      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:9, corners:5, pos:[0,42.5]} },
+      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[15,2], corners:5, pos:[0,-45.5]} },
+      { itemType:"layer", init:{class:"screen", bg:"#000"},
           item:{
             itemType:"image",
             src:"fishing.jpg",
@@ -31,7 +36,8 @@ ProStyle.Stories.phone = {
             height:120,
             action:{ anim:40,rot:-0}
           }
-      }
+      },
+			{ itemType:"layer", init:{class:"screen", shadow:[0,0,4,"rgba(0,0,0,0.9)",0,true]}}
     ]
   }
 };
