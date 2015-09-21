@@ -11,7 +11,7 @@
 ProStyle.Stories.phone = {
 	classes: {
 		inset: { shadow:[0,0,2,"rgba(0,0,0,0.9)",0,true] },
-		screen: { size:[24,76], pos:[0,-3], corners:1, crop:false }
+		screen: { size:[24,76], pos:[0,-3], corners:1, crop:true }
 	},
   canvas: { padding:20, init:{bg: "#787"}},
   frame: { aspectRatio:2 },
@@ -26,23 +26,26 @@ ProStyle.Stories.phone = {
 			origin:{x:12, y:47, expand:true}
     },
     actions: [
-			{ anim:[4,"less curve inout"], pos:40},
-			{ anim:[4,"less curve inout"], rot:360},
-			{ anim:[4,"less curve inout"], rot:0}
+      { anim:[5,"less curve inout"], pos:40},
+      { anim:[3,"less curve inout"], pos:-40},
+			{ anim:[2,"less curve inout"], pos:12},
+			{ anim:[4,"less curve inout"], rot:450},
+      { anim:[4,"less curve inout"], pos:[0,0,50]}
 		],
     items:[
       { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[4.5,9], corners:5, pos:[0,42.5]} },
       { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[7.5,2], corners:5, pos:[0,-45.5]} },
       { itemType:"layer", 
-					init:{class:"screen", bg:"#000"},
+					init:{class:"screen", bg:"transparent"},
           item:{
             itemType:"image", src:"fishing.jpg",
-						init:{ opacity:10, pos:40, size:[135,180] },
+						init:{ pos:40, size:[106,106] },
             actions:[
-							{ anim:[4,"less curve inout"], pos:-40, origin:{x:67.5+39.5, y:90, expand:true}},
-							{ anim:[4,"less curve inout"], origin:{x:67.5+39.5, y:90, expand:true}, rot:-360},
-              { anim:[4,"less curve inout"], origin:{x:67.5+39.5, y:90, expand:true}, rot:0},
-							{ anim:[4,"less curve inout"], rot:0}
+              { anim:[5,"less curve inout"], pos:-40},
+              { anim:[3,"less curve inout"], pos:40},
+							{ anim:[2,"less curve inout"], pos:-12},
+							{ anim:[4,"less curve inout"], origin:{x:53+11.5, y:53, expand:true}, rot:-450},
+              { anim:[20,"less curve inout"], scale:85}
 						]
           }
       },
