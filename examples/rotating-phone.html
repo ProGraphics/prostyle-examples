@@ -3,14 +3,15 @@
 <head>
     <title>Rotating Phone</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script -->
+    <script src="../../prostyle.js/js/prostyle.min.js"></script>
 </head>
 <body data-prostyle="phone"></body>
 <script>
 ProStyle.Stories.phone = {
 	classes: {
 		inset: { shadow:[0,0,2,"rgba(0,0,0,0.9)",0,true] },
-		screen: { size:[24,76], pos:[0,-3], corners:1, crop:true }
+		screen: { size:[24,76], pos:[0,-3], corners:1, crop:false }
 	},
   canvas: { padding:20, init:{bg: "#787"}},
   frame: { aspectRatio:2 },
@@ -22,11 +23,12 @@ ProStyle.Stories.phone = {
       corners:8,
 			shadow:[0,0,5,"rgba(0,0,0,0.6)"],
 			pos:-40,
-			origin:{x:12.5, y:50, expand:true}
+			origin:{x:12, y:47, expand:true}
     },
     actions: [
 			{ anim:[4,"less curve inout"], pos:40},
-			{ anim:[4,"less curve inout"], rot:360}
+			{ anim:[4,"less curve inout"], rot:360},
+			{ anim:[4,"less curve inout"], rot:0}
 		],
     items:[
       { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[4.5,9], corners:5, pos:[0,42.5]} },
@@ -34,11 +36,13 @@ ProStyle.Stories.phone = {
       { itemType:"layer", 
 					init:{class:"screen", bg:"#000"},
           item:{
-            itemType:"image", src:"fishing.jpg", width:540, height:180,
-						init:{ pos:40 },
+            itemType:"image", src:"fishing.jpg",
+						init:{ opacity:10, pos:40, size:[135,180] },
             actions:[
-							{ anim:[4,"less curve inout"], pos:-40, origin:{x:310, y:90, expand:true}},
-							{ anim:[4,"less curve inout"], origin:{x:310, y:90, expand:true}, rot:-360}
+							{ anim:[4,"less curve inout"], pos:-40, origin:{x:67.5+39.5, y:90, expand:true}},
+							{ anim:[4,"less curve inout"], origin:{x:67.5+39.5, y:90, expand:true}, rot:-360},
+              { anim:[4,"less curve inout"], origin:{x:67.5+39.5, y:90, expand:true}, rot:0},
+							{ anim:[4,"less curve inout"], rot:0}
 						]
           }
       },
@@ -46,7 +50,8 @@ ProStyle.Stories.phone = {
     ]
   },
 	controllers:[
-		{ controllerType:"track" }
+		{ controllerType:"track" },
+    { controllerType:"resize" }
 	]
 };
 </script>
