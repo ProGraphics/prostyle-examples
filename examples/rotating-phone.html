@@ -10,36 +10,44 @@
 ProStyle.Stories.phone = {
 	classes: {
 		inset: { shadow:[0,0,2,"rgba(0,0,0,0.9)",0,true] },
-		screen: { size:[45,77], pos:[0,-3], corners:1, crop:true }
+		screen: { size:[24,76], pos:[0,-3], corners:1, crop:true }
 	},
   canvas: { padding:20, init:{bg: "#787"}},
-  frame: { aspectRatio:1 },
+  frame: { aspectRatio:2 },
   item: {
     itemType:"layer",
     init: {
-      size:[50,100],
+      size:[25,100],
       bg:"#EEE",
       corners:8,
-			shadow:[0,0,5,"rgba(0,0,0,0.6)"]
+			shadow:[0,0,5,"rgba(0,0,0,0.6)"],
+			pos:-40,
+			origin:{x:12.5, y:50, expand:true}
     },
-    action: {
-      anim:40, rot:0
-    },
+    actions: [
+			{ anim:[4,"less curve inout"], pos:40},
+			{ anim:[4,"less curve inout"], rot:360}
+		],
     items:[
-      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:9, corners:5, pos:[0,42.5]} },
-      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[15,2], corners:5, pos:[0,-45.5]} },
-      { itemType:"layer", init:{class:"screen", bg:"#000"},
+      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[4.5,9], corners:5, pos:[0,42.5]} },
+      { itemType:"layer", init:{class:"inset", bg:"#EEE", size:[7.5,2], corners:5, pos:[0,-45.5]} },
+      { itemType:"layer", 
+					init:{class:"screen", bg:"#000"},
           item:{
-            itemType:"image",
-            src:"fishing.jpg",
-            width:200,
-            height:120,
-            action:{ anim:40,rot:-0}
+            itemType:"image", src:"fishing.jpg", width:540, height:180,
+						init:{ pos:40 },
+            actions:[
+							{ anim:[4,"less curve inout"], pos:-40, origin:{x:310, y:90, expand:true}},
+							{ anim:[4,"less curve inout"], origin:{x:310, y:90, expand:true}, rot:-360}
+						]
           }
       },
 			{ itemType:"layer", init:{class:"screen", shadow:[0,0,4,"rgba(0,0,0,0.9)",0,true]}}
     ]
-  }
+  },
+	controllers:[
+		{ controllerType:"track" }
+	]
 };
 </script>
 </html>
