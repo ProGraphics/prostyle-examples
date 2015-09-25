@@ -71,6 +71,11 @@ ProStyle.Stories.bars = {
 		  { delay:14.5, anim:1, size:[45,65], rot:[-10,10,-15], bg:"#333", corners:24, border:[3,"orange"], scale:90},
 		  { anim:[5,"extra elastic"], scale:false, rot:false},
 		  { anim:2, bg:"#EEE", size:[65,70], corners:1, pos:{z:-1},rot:{x:20}, border:false}
+		],
+		controllers: [
+			{ controllerType: "track" },
+			{ controllerType: "resize" },
+			{ controllerType: "auto", restart:true }
 		]
 	}
 };

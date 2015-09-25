@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perspective Shadow</title>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script -->
+		<script src="../../../../bitbucket/prostyle/build/greensock/TweenMax.js"></script>
+		
+		<!-- script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script -->
+    <script src="../../prostyle.js/js/prostyle.js"></script>
+</head>
+<body data-prostyle="spinz"></body>
+<!-- https://flic.kr/p/8Qt15S -->
+<script>
+ProStyle.Stories.spinz = {
+  classes:{
+    anim:{ anim:[5,"less elastic"] },
+    long:{ size:[40,8], corners:5 },
+    circ:{ rot:-720, size:[18,32], corners:16 },
+    square: { rot:0, corners:false },
+		art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)"} }
+  },
+  canvas:{ padding:10, init: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", size:[100, "auto"], rep:"no-repeat"}} },
+  items:[
+    {
+      itemType:"layer",
+      init:{ class:"art, long", bg:"#EEE", border:[0.3,"#333"] },
+      actions:[
+        { class:"anim, circ"},
+        { class:"anim, square" },
+        { class:"anim, long" }
+      ]
+    },
+    {
+      itemType:"layer",
+      init:{ 
+				class: "art", rot:[85], pos:[0,30,-50], scale:[90,200], corners: 10,
+				shadow:[0,0,2,"rgba(0,0,0,0.9)"]
+			},
+      item: {
+        itemType:"layer",
+        init:{ class:"long", bg:"rgba(0,0,0,0.6)", shadow:[0,0,2,"rgba(0,0,0,0.6)",2], pos:{y:10}, scale:120 },
+        actions:[
+          { class:"anim, circ" },
+          { class:"anim, square" },
+          { class:"anim, long" }
+        ]
+      }
+    }
+  ]
+};
+</script>
+</html>
