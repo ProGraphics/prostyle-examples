@@ -17,13 +17,15 @@ ProStyle.Stories.spinz = {
     long:{ size:[40,8], corners:5 },
     circ:{ rot:-720, size:[18,32], corners:16 },
     square: { rot:0, corners:false },
-		art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)"} }
+		art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", layout:"stretch"} }
   },
-  canvas:{ padding:10, init: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", size:[100, "auto"], rep:"no-repeat"}} },
+  canvas:{ padding:10, init: {
+		bg:{ img:"radial-gradient(ellipse at center, rgba(60,60,51,1) 0%, rgba(120,120,102,1) 60%)", layout:["cover"], ar:[1.5], rep:true},
+	} },
   items:[
     {
       itemType:"layer",
-      init:{ class:"art, long", bg:"#EEE", border:[0.3,"#333"] },
+      init:{ class:"long", bg:"#EEE", border:[0.3,"#333"] },
       actions:[
         { class:"anim, circ"},
         { class:"anim, square" },
