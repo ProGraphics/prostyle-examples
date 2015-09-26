@@ -13,10 +13,22 @@
 <script>
 ProStyle.Stories.gradient = {
   canvas:{ 
-		init:{bg: "radial-gradient(ellipse at center, rgba(68,68,51,1) 0%, rgba(119,119,102,1) 100%)"}
+		init:{bug: {img: "url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", layout: "cover"}}
 	},
+	frame: {aspectRatio:1},
 	page:{
-		init:{bg: "radial-gradient(ellipse at center, rgba(68,68,51,1) 0%, rgba(119,119,102,1) 100%)"}
+		canvasAction: [
+			{ anim:3, bug:{ layout:"contain" } }
+		],
+		item: {
+			itemType:"layer",
+			init:{
+				shadow:true,
+				bg: {img: "url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", ar:1, layout: "contain", rep:false},
+				size:[100,70]
+			},
+			action:{ delay:3, anim:[5,"linear",[5,"yoyo"]], bg: {layout:"cover"} }
+		}
 	}
 };
 </script>
