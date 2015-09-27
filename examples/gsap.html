@@ -3,50 +3,54 @@
 <head>
     <title>Tribute to GSAP</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script>
+		<!-- script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script -->
+    <script src="../../prostyle.js/js/prostyle.js"></script>
 </head>
 <body data-prostyle="gsap"></body>
 <script>
 ProStyle.Stories.gsap = {
 	classes: { 
-		text:{ font:55, style:"bold" },
-		c1: { color:"#677" }, c2: { color:"#899" },
+		text:{ font:50, style:"bold" },
+		c1: { color:"#677",  pos:{y:-5} }, c2: { color:"#899",  pos:{y:-5} },
+		bounce: { anim:[2, "sine inout", [15,"yoyo"], 1], pos:{y:5} }
 	},
-  canvas: { padding:10, init:{bg:"#899"} },
+  canvas: { init:{bg:"#899"} },
 	item: {
 		itemType: "layer",
 		init:{ rot:[15] },
 		item: {
 			itemType:"layer",
 			items: [
-				{ text:"GSAP",	charInit:{class:"c1", scale:170, pos:{z:1}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:165, pos:{z:2}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:160, pos:{z:3}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:155, pos:{z:4}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:150, pos:{z:5}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:145, pos:{z:6}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:140, pos:{z:7}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:135, pos:{z:8}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:130, pos:{z:9}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:125, pos:{z:10}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:120, pos:{z:11}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:115, pos:{z:12}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:110, pos:{z:13}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:105, pos:{z:14}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:100, pos:{z:15}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:95, pos:{z:16}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:90, pos:{z:17}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:85, pos:{z:18}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:80, pos:{z:19}} },
-				{ text:"GSAP",	charInit:{class:"c2", scale:75, pos:{z:20}} },
-				{ text:"GSAP",	charInit:{class:"c1", scale:70, pos:{z:21}} }
+				{ text:"GSAP",	charInit:{class:"c1", scale:170, pos:{z:1}}, charAction:{class:"bounce", delay:2.0 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:165, pos:{z:2}}, charAction:{class:"bounce", delay:1.9 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:160, pos:{z:3}}, charAction:{class:"bounce", delay:1.8 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:155, pos:{z:4}}, charAction:{class:"bounce", delay:1.7 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:150, pos:{z:5}}, charAction:{class:"bounce", delay:1.6 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:145, pos:{z:6}}, charAction:{class:"bounce", delay:1.5 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:140, pos:{z:7}}, charAction:{class:"bounce", delay:1.4 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:135, pos:{z:8}}, charAction:{class:"bounce", delay:1.3 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:130, pos:{z:9}}, charAction:{class:"bounce", delay:1.2 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:125, pos:{z:10}}, charAction:{class:"bounce", delay:1.1 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:120, pos:{z:11}}, charAction:{class:"bounce", delay:1.0 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:115, pos:{z:12}}, charAction:{class:"bounce", delay:0.9 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:110, pos:{z:13}}, charAction:{class:"bounce", delay:0.8 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:105, pos:{z:14}}, charAction:{class:"bounce", delay:0.7 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:100, pos:{z:15}}, charAction:{class:"bounce", delay:0.6 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:95, pos:{z:16}}, charAction:{class:"bounce", delay:0.5 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:90, pos:{z:17}}, charAction:{class:"bounce", delay:0.4 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:85, pos:{z:18}}, charAction:{class:"bounce", delay:0.3 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:80, pos:{z:19}}, charAction:{class:"bounce", delay:0.2 } },
+				{ text:"GSAP",	charInit:{class:"c2", scale:75, pos:{z:20}}, charAction:{class:"bounce", delay:0.1 } },
+				{ text:"GSAP",	charInit:{class:"c1", scale:70, pos:{z:21}}, charAction:{class:"bounce" } }
 			],
-			action:{ anim:[20,"linear"], rot:360 }
+			action:{ anim:[37,"linear"], rot:1080 }
 		},
-		action:{ anim:[20,"linear"], rot:-360 }
+		action:{ anim:[37,"linear"], rot:-1080 }
 	},
 	controllers:[
-		{ controllerType:"auto", restart:true }
+		{ controllerType:"auto", restart:true },
+		{ controllerType:"resize"},
+		{ controllerType:"track"}
 	]
 };
 </script>
