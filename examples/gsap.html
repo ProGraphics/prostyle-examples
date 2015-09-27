@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tribute to GSAP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script>
+</head>
+<body data-prostyle="gsap"></body>
+<script>
+ProStyle.Stories.gsap = {
+	classes: { 
+		text:{ font:55, style:"bold" },
+		c1: { color:"#677" }, c2: { color:"#899" },
+	},
+  canvas: { padding:10, init:{bg:"#899"} },
+	item: {
+		itemType: "layer",
+		init:{ rot:[15] },
+		item: {
+			itemType:"layer",
+			items: [
+				{ text:"GSAP",	charInit:{class:"c1", scale:170, pos:{z:1}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:165, pos:{z:2}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:160, pos:{z:3}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:155, pos:{z:4}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:150, pos:{z:5}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:145, pos:{z:6}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:140, pos:{z:7}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:135, pos:{z:8}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:130, pos:{z:9}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:125, pos:{z:10}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:120, pos:{z:11}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:115, pos:{z:12}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:110, pos:{z:13}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:105, pos:{z:14}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:100, pos:{z:15}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:95, pos:{z:16}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:90, pos:{z:17}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:85, pos:{z:18}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:80, pos:{z:19}} },
+				{ text:"GSAP",	charInit:{class:"c2", scale:75, pos:{z:20}} },
+				{ text:"GSAP",	charInit:{class:"c1", scale:70, pos:{z:21}} }
+			],
+			action:{ anim:[20,"linear"], rot:360 }
+		},
+		action:{ anim:[20,"linear"], rot:-360 }
+	},
+	controllers:[
+		{ controllerType:"auto", restart:true }
+	]
+};
+</script>
+</html>
