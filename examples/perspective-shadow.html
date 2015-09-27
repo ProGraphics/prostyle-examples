@@ -17,38 +17,40 @@ ProStyle.Stories.spinz = {
     long:{ size:[40,8], corners:5 },
     circ:{ rot:-720, size:[18,32], corners:16 },
     square: { rot:0, corners:false },
-		art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", layout:"stretch"} }
+    art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", layout:"stretch"} }
   },
   canvas:{ padding:10, init: {
-		bg:{ img:"radial-gradient(ellipse at center, rgba(60,60,51,1) 0%, rgba(120,120,102,1) 60%)", layout:["cover"], ar:[1.5], rep:true},
-	} },
+    bg:{ 
+		  img:"radial-gradient(ellipse at center, #EEF 0%, #776 100%)", layout:["cover"], ar:[1.5], rep:false},
+  } },
   items:[
     {
       itemType:"layer",
-      init:{ class:"long", bg:"#EEE", border:[0.3,"#333"] },
+      init:{ class:"long", bg:"#C6AF7B", border:[0.7,"#553C35"], pos:{y:-20}},
       actions:[
-        { class:"anim, circ"},
-        { class:"anim, square" },
-        { class:"anim, long" }
+        { class:"anim, circ"}, { class:"anim, square" }, { class:"anim, long" }
       ]
     },
     {
       itemType:"layer",
       init:{ 
-				class: "art", rot:[85], pos:[0,30,-50], scale:[90,200], corners: 10,
-				shadow:[0,0,2,"rgba(0,0,0,0.9)"]
-			},
+        class: "art", rot:[85], pos:[0,30,-50], scale:[90,200], corners: 10,
+        shadow:[0,0,1,"rgba(0,0,0,0.7)",1]
+      },
       item: {
         itemType:"layer",
         init:{ class:"long", bg:"rgba(0,0,0,0.6)", shadow:[0,0,2,"rgba(0,0,0,0.6)",2], pos:{y:10}, scale:120 },
         actions:[
-          { class:"anim, circ" },
-          { class:"anim, square" },
-          { class:"anim, long" }
+          { class:"anim, circ" }, { class:"anim, square" }, { class:"anim, long" }
         ]
       }
     }
-  ]
+  ],
+	controllers: [
+		{ controllerType: "auto", restart:true },
+		{ controllerType: "resize" },
+		{ controllerType: "track" }
+	]
 };
 </script>
 </html>
