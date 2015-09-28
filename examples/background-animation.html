@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script -->
+    <script src="../../prostyle.js/js/prostyle.js"></script>
+</head>
+<body data-prostyle="bg"></body>
+<script>
+ProStyle.Stories.bg = {
+	classes:{
+		wide:{ anim:1, size:[70,30] },
+		small:{ anim:1, size:[20,30] },
+		tall:{ anim:1, size:[20,90] },
+		big:{ anim:1, size:[70,90] }
+	},
+  canvas: {padding:20, init:{bg: "#787"}},
+	frame: { aspectRatio:2 },
+	items: [
+		{
+			itemType: "layer",
+			init:{ 
+				border:[5,"rgba(0,0,255,0.2)", "solid"],
+				pos:-13, class:"wide",
+				bg: { image:"url(balls.jpg)", ar:1.7778, repeat:false, layout:"contain", color:"rgba(0,0,0,0.1)", clip:"border-box" }
+			}, 
+			scripts:[
+				{ actions: [
+						{ delay:1, class: "small" },{ delay:1, class: "tall" },{ delay:1, class: "big" },{ delay:1, class: "wide" },
+						{ anim:0.5, bg:{layout:"cover"}},
+						{ delay:1, class: "small" },{ delay:1, class: "tall" },{ delay:1, class: "big" },{ delay:1, class: "wide" },
+						{ anim:0.5, bg:{layout:"stretch"}},
+						{ delay:1, class: "small" },{ delay:1, class: "tall" },{ delay:1, class: "big" },{ delay:1, class: "wide" },
+						{ anim:0.5, bg:{layout:"stretch-x", w:50}},
+						{ delay:1, class: "small" },{ delay:1, class: "tall" },{ delay:1, class: "big" },{ delay:1, class: "wide" },
+						{ anim:0.5, bg:{layout:"stretch-y", h:50}},
+						{ delay:1, class: "small" },{ delay:1, class: "tall" },{ delay:1, class: "big" },{ delay:1, class: "wide" },
+						{ anim:0.5, bg:{layout:"contain"}, class:"wide" }
+						
+					]
+				}
+			]
+		},
+		{ itemType:"layer",
+			init:{ size:[25,15],pos:[40,-40], bg:"rgba(0,0,255,0.2)"},
+			actions:[
+				{ delay:8, anim:0.5, pos:[40,-20]},
+				{ delay:8, anim:0.5, pos:[40,0]},
+				{ delay:8, anim:0.5, pos:[40,20]},
+				{ delay:8, anim:0.5, pos:[40,40]},
+				{ delay:8, anim:0.5, pos:[40,-40]}
+			]
+		},
+		{ text:"contain", init:{ pos:[40,-40,1] } },
+		{ text:"cover", init:{ pos:[40,-20,1] } },
+		{ text:"stretch", init:{ pos:[40,0,1] } },
+		{ text:"stretch-w", init:{ pos:[40,20,1] } },
+		{ text:"stretch-h", init:{ pos:[40,40,1] } }
+	],
+	controllers:[
+		{ controllerType:"auto" },
+		{ controllerType:"track" },
+    { controllerType:"resize" }
+	]
+};
+</script>
+</html>
