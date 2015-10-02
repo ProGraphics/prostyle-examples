@@ -8,21 +8,22 @@
 		<!-- script src="https://cdnjs.cloudflare.com/ajax/libs/prostyle/1.1.0/prostyle.min.js"></script -->
     <script src="../../prostyle.js/js/prostyle.js"></script>
 </head>
-<body data-prostyle="spinz"></body>
+<body data-prostyle="shadow"></body>
 <!-- https://flic.kr/p/8Qt15S -->
 <script>
-ProStyle.Stories.spinz = {
+ProStyle.Stories.shadow = {
   classes:{
     anim:{ anim:[5,"less elastic"] },
-    long:{ size:[40,8], corners:5 },
-    circ:{ rot:-720, size:[18,32], corners:16 },
+    long:{ size:[60,12], corners:6 },
+    circ:{ rot:-720, size:[27,48], corners:24 },
     square: { rot:0, corners:false },
     art: { bg:{ img:"url(https://c2.staticflickr.com/2/1262/5142957490_2a7fe313dc_o.jpg)", layout:"stretch"} }
   },
   canvas:{ padding:10, init: {
     bg:{ 
-		  img:"radial-gradient(ellipse at center, #EEF 0%, #776 100%)", layout:["cover"], ar:[1.5], rep:false},
-  } },
+      img:"radial-gradient(ellipse at center, #EEF 0%, #776 100%)", layout:["cover"], ar:[1.5], rep:false},
+    }
+  },
   items:[
     {
       itemType:"layer",
@@ -34,12 +35,12 @@ ProStyle.Stories.spinz = {
     {
       itemType:"layer",
       init:{ 
-        class: "art", rot:[85], pos:[0,30,-50], scale:[90,200], corners: 10,
+        class: "art", rot:[81], pos:[0,25,-50], size:[150,200], corners: 10,
         shadow:[0,0,1,"rgba(0,0,0,0.7)",1]
       },
       item: {
         itemType:"layer",
-        init:{ class:"long", bg:"rgba(0,0,0,0.6)", shadow:[0,0,2,"rgba(0,0,0,0.6)",2], pos:{y:10}, scale:120 },
+        init:{ class:"long", bg:"rgba(0,0,0,0.6)", shadow:[0,0,2,"rgba(0,0,0,0.6)",2], pos:{y:30} },
         actions:[
           { class:"anim, circ" }, { class:"anim, square" }, { class:"anim, long" }
         ]
